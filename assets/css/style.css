@@ -1,0 +1,242 @@
+@import url("https://fonts.googleapis.com/css?family=Muli:600,700&display=swap");
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Muli", sans-serif;
+}
+
+.row {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.nav_style {
+  background: rgb(7, 7, 109) !important;
+  background: linear-gradient(90deg, rgba(7, 7, 109, 1) 0%, rgba(209, 181, 20, 0.9615196420365021) 45%, rgba(255, 0, 14, 1) 100%) !important;
+}
+
+.nav_style a {
+  color: #ffffff;
+}
+
+.main_header {
+  height: 400px;
+  width: 100%;
+}
+
+.rightside h1 {
+  font-size: 3rem;
+}
+
+.update {
+  font-weight: 900;
+}
+
+/* !Animation for O */
+
+.rotate img {
+  width: 6%;
+  margin-bottom: 3px;
+  animation: orotate 5s linear infinite;
+}
+
+@keyframes orotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* ?Icon Animation */
+
+.leftside img {
+  animation: zinout 5s linear infinite;
+}
+
+@keyframes zinout {
+  0% {
+    transform: scale(.75);
+  }
+  20% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(.75);
+  }
+  60% {
+    transform: scale(1);
+  }
+  80% {
+    transform: scale(.75);
+  }
+  100% {
+    transform: scale(.75);
+  }
+}
+
+/* Corona Update */
+
+.corona_update {
+  margin: 0 0 30px 0;
+}
+
+.corona_update h3 {
+  color: #ff7675;
+}
+
+.corona_update h1 {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.timestamp {
+  margin-bottom: 15px;
+}
+
+.update_button {
+  margin-top: 5px;
+}
+
+/* About */
+
+.sub-section {
+  background-color: #fbfafd;
+}
+
+.prevention_info {
+  margin-top: 5px;
+  padding: 5px;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* Footer */
+
+.disclaimer {
+  background-color: #000090;
+  padding: 25px;
+}
+
+.disclaimer p {
+  margin-bottom: 0 !important;
+  font-size: 18px;
+  letter-spacing: 0.1rem;
+}
+
+.footer_style {
+  background-color: #303030 !important;
+}
+
+.footer_style h6 {
+  margin-bottom: 0 !important;
+  font-size: 18px;
+  letter-spacing: 0.4rem;
+  line-height: 0.2rem;
+}
+
+/* Scroll Arrow */
+
+#myBtn {
+  position: fixed;
+  right: 40px;
+  bottom: 25px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: #00a8ff;
+  color: white;
+  cursor: pointer;
+  height: 35px;
+  padding: 8px;
+  border-radius: 5px;
+}
+
+#myBtn:hover {
+  background: #0a196e;
+}
+
+/* !Responsive */
+
+@media (max-width: 920px) {
+  .count_style {
+    display: flex;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 820px) {
+  .count_style {
+    display: flex;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main_header {
+    height: 700px;
+    text-align: center;
+  }
+  .main_header h1 {
+    text-align: center;
+    padding: 0;
+    width: 100%;
+    font-size: 28px;
+  }
+  .count_style {
+    display: inline !important;
+  }
+  .count_style p {
+    text-align: center;
+  }
+  .update_button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+  }
+  .about_corona h2 {
+    margin-top: 15px;
+    font-size: 18px;
+  }
+  .about_corona p {
+    font-size: 15px;
+  }
+  .prevent_corona h1 {
+    font-size: 24px;
+  }
+  .govt_info img {
+    width: 80%;
+    padding-right: 15px;
+  }
+  iframe {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 95px !important;
+  }
+}
+
+iframe {
+  margin-left: 150px !important;
+}
+
+.govt_info {
+  margin-top: 5px;
+  padding: 5px;
+}
+
+.govt_info img {
+  margin-left: 90px !important;
+  padding: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
