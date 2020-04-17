@@ -76,10 +76,10 @@
     <!-- Lastest Update -->
     <section class="corona_update container-fluid">
         <div class="my-4">
-            <h3 class="text-capitalize text-center"> COVID-19 Updates in India <span class="update"> </span></h3>
-            <h3 class="timestamp text-center"> on
+            <h3 class="text-capitalize text-center"> COVID-19 🇮🇳 Indian statistics <span class="update"> </span></h3>
+            <h3 class="timestamp text-center"> On
                 <?php date_default_timezone_set('Asia/Kolkata');
-                $currentTime = date('d-m-Y h:i:s A', time());
+                $currentTime = date('d-m-Y');
                 echo $currentTime; ?>
                 <form action="world.php" target="_blank"><button type="submit" class="btn btn-outline-success update_button">World Wide Update</button></form>
             </h3>
@@ -182,7 +182,7 @@
     <!-- Prevention -->
     <section class="prevent_corona">
         <div class="govt_inst do_dont" id="previd">
-            <h2 class=" text-info text-center mt-5"> Instruction from Govt. of India about Corona Virus: </h2>
+            <h2 class="text-info text-center mt-5"> Instruction from Govt. of India about Corona Virus: </h2>
             <iframe src="assets/pdf/Poster_Corona_ad_Eng.pdf" frameborder="1" width="80%" height="500px" class="mt-2 mb-10"></iframe>
         </div>
         <div class="container-fluid">
@@ -212,7 +212,7 @@
                             </div>
                             <div class="col-lg-8 col-md-8 col-12">
                                 <p class="text-align-left"> Avoid close contact with People (1 meter or 3 feets),
-                                    Home Quarantine Yourself for till <span class="text-primary"> 30th April </p>
+                                    Home Quarantine Yourself for till <span class="text-primary"> 3rd May </p>
                             </div>
                         </div>
                     </div>
@@ -230,9 +230,28 @@
                     </div>
                     <p class="prevention_info">
                         According to WHO : The best way to prevent and slow down transmission is be well informed about the COVID-19 virus, the disease it causes and how it spreads. Protect yourself and others from infection by washing your hands or using an alcohol based rub frequently and not touching your face.
-                    </p>
+                        <div class="sources"> <strong> You’ve survived <span class="text-primary">
+                                    <?php
+                                    $from = date_create("2020-03-24");
+                                    $to =  date_create(date('Y-m-d'));
+                                    $diff = date_diff($to, $from);
+                                    echo $diff->format('%a');
+                                    ?>
+                                </span> days so far 😷 only <span class="text-primary">
+                                    <?php
+                                    $from = date_create(date('Y-m-d'));
+                                    $to = date_create("2020-05-03");
+                                    $diff = date_diff($to, $from);
+                                    echo $diff->format('%a');
+                                    ?> </span> days before the lockdown is lifted. Congrats! 🥳</p></strong>
                 </div>
             </div>
+            <div class="sources container-fluid tex-center">
+                * All This above information is sourced from crowdsource <br />
+                &ensp; data and can be inaccurate. <br />
+                &ensp; Don't panic & wait for govt. sources to verify this data.
+            </div>
+        </div>
         </div>
     </section>
     <!-- Contact with us -->
@@ -319,7 +338,7 @@
             </p>
         </div>
         <div class="footer_style text-white text-center container-fluid">
-            <h6 class="text-center"><i class="fa fa-copyright fa-1.5x text-black"></i> 2020 Soumyadeep Sinha </h6>
+            <h6 class="text-center"> Designed by Soumyadeep Sinha </h6>
         </div>
     </footer>
     <!-- JavaScript -->
