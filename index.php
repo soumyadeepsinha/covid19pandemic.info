@@ -1,3 +1,8 @@
+<?php
+
+include 'india.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -90,15 +95,15 @@
                 <p class="text-capitalize"> Passengers screened at airport </p>
             </div>
             <div>
-                <h1 class="count"> 9,738 </h1>
-                <p class="text-capitalize"> Active cases </p>
+                <h1 class="count"> <?php echo $total ?> </h1>
+                <p class="text-capitalize"> Total cases </p>
             </div>
             <div>
-                <h1 class="count"> 1,365 </h1>
+                <h1 class="count"> <?php echo $discharged ?> </h1>
                 <p class="text-capitalize"> Cured / Discharged cases </p>
             </div>
             <div>
-                <h1 class="count"> 398 </h1>
+                <h1 class="count"> <?php echo $death ?> </h1>
                 <p class="text-capitalize"> Death Cases </p>
             </div>
             <div class="update_button">
