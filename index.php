@@ -90,15 +90,15 @@
                 <p class="text-capitalize"> Passengers screened at airport </p>
             </div>
             <div>
-                <h1 class="count"> 8,978 </h1>
+                <h1 class="count"> 9,738 </h1>
                 <p class="text-capitalize"> Active cases </p>
             </div>
             <div>
-                <h1 class="count"> 1,205 </h1>
+                <h1 class="count"> 1,365 </h1>
                 <p class="text-capitalize"> Cured / Discharged cases </p>
             </div>
             <div>
-                <h1 class="count"> 358 </h1>
+                <h1 class="count"> 398 </h1>
                 <p class="text-capitalize"> Death Cases </p>
             </div>
             <div class="update_button">
@@ -314,10 +314,11 @@
                 I will never share any of your contact details with any one <br />
                 I'll update this once or twice a day; For exact info you can follow top listed Govt. Websites <br />
                 Thank You <br />
-                <form action="https://github.com/soumyadeepsinha/COVID-19_Info"><button type="submit" class="btn btn-outline-success"> Source Code </button></form>
+                <form action="https://bitbucket.org/soumyadeepsinha/covid19info/src/master/" target="_blank"><button type="submit" class="btn btn-outline-success">
+                        < Source Code /> </button></form>
             </p>
         </div>
-        <div class=" footer_style text-white text-center container-fluid">
+        <div class="footer_style text-white text-center container-fluid">
             <h6 class="text-center"><i class="fa fa-copyright fa-1.5x text-black"></i> 2020 Soumyadeep Sinha </h6>
         </div>
     </footer>

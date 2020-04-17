@@ -7,7 +7,7 @@ if (isset($_POST['submit'])) {      // if user clicks on 'Submit' button
     To prevent COVID-19 Please  Stay Safe at Home Quarantine....Don\'t panic!
     We will contact with you shortly...
     From: Soumyadeep Sinha';                    // mail text
-    $headers = 'From: sinhajiko@gmail.com';   // sender email address
+    $headers = 'From: youemail@email.com';   // sender email address
 
     // if user doesn't provide a email
     if ($email == '') {
