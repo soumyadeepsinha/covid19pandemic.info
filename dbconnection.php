@@ -3,7 +3,7 @@
 $server = 'localhost';
 $user = 'root';
 $password = '';
-$db = 'coronainfo';
+$db = 'databasename';
 
 // Attempt to connect to MySQL database
 $con = mysqli_connect($server, $user, $password, $db);
