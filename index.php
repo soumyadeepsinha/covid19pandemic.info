@@ -1,8 +1,3 @@
-<?php
-
-include 'india.php';
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -81,7 +76,7 @@ include 'india.php';
     <!-- Lastest Update -->
     <section class="corona_update container-fluid">
         <div class="my-4">
-            <h3 class="text-capitalize text-center"> COVID-19 🇮🇳 Indian statistics <span class="update"> </span></h3>
+            <h3 class="text-capitalize text-center"> COVID-19 🇮🇳 Indian Statistics <span class="update"> </span></h3>
             <h3 class="timestamp text-center"> On
                 <?php date_default_timezone_set('Asia/Kolkata');
                 $currentTime = date('d-m-Y');
@@ -95,15 +90,15 @@ include 'india.php';
                 <p class="text-capitalize"> Passengers screened at airport </p>
             </div>
             <div>
-                <h1 class="count"> <?php echo $total ?> </h1>
-                <p class="text-capitalize"> Total cases </p>
+                <h1 class="count"> 11,618 </h1>
+                <p class="text-capitalize"> Active cases </p>
             </div>
             <div>
-                <h1 class="count"> <?php echo $discharged ?> </h1>
+                <h1 class="count"> 1,766 </h1>
                 <p class="text-capitalize"> Cured / Discharged cases </p>
             </div>
             <div>
-                <h1 class="count"> <?php echo $death ?> </h1>
+                <h1 class="count"> 450 </h1>
                 <p class="text-capitalize"> Death Cases </p>
             </div>
             <div class="update_button">
