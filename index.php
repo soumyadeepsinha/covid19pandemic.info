@@ -86,19 +86,20 @@
         </div>
         <div class="d-flex justify-content-around align-items-center count_style">
             <div>
+                <?php include './admin/index.php'; ?>
                 <h1 class="count"> 1,524,266 </h1>
                 <p class="text-capitalize"> Passengers screened at airport </p>
             </div>
             <div>
-                <h1 class="count"> 11,618 </h1>
-                <p class="text-capitalize"> Active cases </p>
+                <h1 class="count"> <?php echo $total; ?> </h1>
+                <p class="text-capitalize">&nbsp; Confirmed cases </p>
             </div>
             <div>
-                <h1 class="count"> 1,766 </h1>
+                <h1 class="count"> <?php echo $discharged; ?> </h1>
                 <p class="text-capitalize"> Cured / Discharged cases </p>
             </div>
             <div>
-                <h1 class="count"> 450 </h1>
+                <h1 class="count"> <?php echo $death; ?> </h1>
                 <p class="text-capitalize"> Death Cases </p>
             </div>
             <div class="update_button">
@@ -230,7 +231,7 @@
                     </div>
                     <p class="prevention_info">
                         According to WHO : The best way to prevent and slow down transmission is be well informed about the COVID-19 virus, the disease it causes and how it spreads. Protect yourself and others from infection by washing your hands or using an alcohol based rub frequently and not touching your face.
-                        <div class="sources"> <strong> You’ve survived <span class="text-primary">
+                        <div class="sources text-center"> <strong> You’ve survived <span class="text-primary">
                                     <?php
                                     $from = date_create("2020-03-24");
                                     $to =  date_create(date('Y-m-d'));
