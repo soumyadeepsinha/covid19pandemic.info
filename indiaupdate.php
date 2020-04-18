@@ -78,14 +78,7 @@
         <?php date_default_timezone_set('Asia/Kolkata');
         $currentTime = date('d-m-Y h:i:s A', time());
         echo $currentTime; ?>
-        <div class="row">
-          <div class="col l4 m6 s12">
-            <form action="world.php" target="_blank"><button type="submit" class="btn btn-outline-success update_button">World Wide Update</button></form>
-          </div>
-          <div class="col l4 m6 s12">
-            <form action="india.php" target="_blank"><button type="submit" class="btn btn-outline-success update_button">Day wise Update in India</button></form>
-          </div>
-        </div>
+        <form action="world.php" target="_blank"><button type="submit" class="btn btn-outline-success update_button">World Wide Update</button></form>
       </h3>
     </div>
     <div class="table-responsive">

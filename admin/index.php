@@ -1,4 +1,3 @@
-
 <?php
 $url = "https://www.mohfw.gov.in/";
 $html = file_get_contents($url);
@@ -18,4 +17,3 @@ foreach ($rows as $row) {
     $death = $death + $cols->item(4)->nodeValue;
   }
 }
-?>

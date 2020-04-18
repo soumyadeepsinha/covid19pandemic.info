@@ -375,13 +375,18 @@
 <?php
 // including database connectivity file
 require_once 'dbconnection.php';
+/* check connection */
+if (mysqli_connect_errno()) {
+    printf("Connect failed: %s\n", mysqli_connect_error());
+    exit();
+}
 if (isset($_POST['submit'])) {
-    $username = $_POST['username'];
-    $email = $_POST['email'];
-    $mobile = $_POST['mobile'];
-    $address = $_POST['address'];   // Storing user data
-    $symp = $_POST['coronasym'];
-    $message = $_POST['message'];
+    $username = mysqli_real_escape_string($con, $_POST['username']);
+    $email = mysqli_real_escape_string($con, $_POST['email']);
+    $mobile = mysqli_real_escape_string($con, $_POST['mobile']);
+    $address = mysqli_real_escape_string($con, $_POST['address']);   // Storing user data
+    $symp = mysqli_real_escape_string($con, $_POST['coronasym']);
+    $message = mysqli_real_escape_string($con, $_POST['message']);
 
     $check = "";
     foreach ($symp as $check1) {
@@ -389,11 +394,16 @@ if (isset($_POST['submit'])) {
     }
 
     // statement to insert data in table 
-    $insert = "INSERT INTO info (username, email, mobile, address, symptom, message)
-    VALUES ('$username', '$email', '$mobile', '$address', '$check', '$message')";
-
-    // run the SQL query
-    $query = mysqli_query($con, $insert);
+    @$insert = "INSERT INTO info (username, email, mobile, address, symptom, message)
+                VALUES (?, ?, ?, ?, ?, ?);";
+    @$stmt = mysqli_stmt_init($con);
+    if (!mysqli_stmt_prepare($stmt, $insert)) {
+        echo 'SQL Error!';
+    } else {
+        mysqli_stmt_bind_param($stmt, 'ssssss', $username, $email, $mobile, $address, $check, $message);
+        // run the SQL query
+        @$query = mysqli_stmt_execute($stmt);
+    }
 
     if ($query) {   // if query executes
 ?>
