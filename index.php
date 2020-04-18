@@ -376,26 +376,30 @@
 // including database connectivity file
 require_once 'dbconnection.php';
 if (isset($_POST['submit'])) {
-    $username = $_POST['username'];
-    $email = $_POST['email'];
-    $mobile = $_POST['mobile'];
-    $address = $_POST['address'];   // Storing user data
-    $symp = $_POST['coronasym'];
-    $message = $_POST['message'];
-
-    $check = "";
-    foreach ($symp as $check1) {
-        $check .= $check1 . ",";    // Storing multiple symptoms in array
-    }
-
     // statement to insert data in table 
-    $insert = "INSERT INTO info (username, email, mobile, address, symptom, message)
-    VALUES ('$username', '$email', '$mobile', '$address', '$check', '$message')";
+    $sql = "INSERT INTO info (username, email, mobile, address, symptom, message)
+    VALUES (?, ?, ?, ?, ?, ?);";
 
-    // run the SQL query
-    $query = mysqli_query($con, $insert);
+    // prepare statement
+    $result = mysqli_prepare($con, $sql);
 
-    if ($query) {   // if query executes
+    if ($result) {
+        // bind variables to prepare statment as parameters
+        mysqli_stmt_bind_param($result, 'ssssss', $username, $email, $mobille, $address, $check, $message);
+
+        // variables & values
+        $username = $_POST['username'];
+        $email = $_POST['email'];
+        $mobile = $_POST['mobile'];
+        $address = $_POST['address'];   // Storing user data
+        $symp = $_POST['coronasym'];
+        $message = $_POST['message'];
+
+        $check = "";
+        foreach ($symp as $check1) {
+            $check .= $check1 . ",";    // Storing multiple symptoms in array
+        }
+        mysqli_stmt_execute($result);
 ?>
         <script type="text/javascript">
             alert("Your Information has been Inserted Successfully!");
@@ -408,7 +412,14 @@ if (isset($_POST['submit'])) {
         </script>
 <?php
     }
+
+    // close prepared statement
+    mysqli_stmt_close($result);
+
+    // Close connection
+    mysqli_close($con);
 }
+
 // Redirecting to email page
 include 'email.php';
 ?>
