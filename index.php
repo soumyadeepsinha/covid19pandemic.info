@@ -4,9 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <!-- jQuery library -->
@@ -68,7 +65,7 @@
             </div>
             <div class="col-lg-7 col-md-7 col-12 order-lg-2 order-1">
                 <div class="rightside w-100 h-100 d-flex justify-content-center align-items-center">
-                    <h1> Stay Home <i class="fa fa-home"></i> <span class="text-primary"> Stay Safe </span> Fight Together Against C<span class="rotate"><img src="./assets/images/O.png" alt="O"></span>rona Virus </h1>
+                    <h1> Stay Home <i class="fa fa-home fa-3x" aria-hidden="true"></i> <span class="text-primary"> Stay Safe </span> Fight Together Against C<span class="rotate"><img src="./assets/images/O.png" alt="O"></span>rona Virus </h1>
                 </div>
             </div>
         </div>
@@ -313,7 +310,10 @@
                                 <label>Define your Problems</label>
                                 <textarea class="form-control" name="message" rows="3"></textarea>
                             </div>
-                            <button type="submit" class="btn btn-outline-success btn-block" name="submit" value="submit">Submit</button>
+
+                            <div class="form-submit">
+                                <input type="submit" class="btn btn-success btn-block" value="Submit" />
+                            </div>
                         </form>
                     </div>
                 </div>
@@ -375,17 +375,15 @@
 <?php
 // including database connectivity file
 require_once 'dbconnection.php';
-if (isset($_POST['submit'])) {
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // statement to insert data in table 
-    $sql = "INSERT INTO info (username, email, mobile, address, symptom, message)
+    $sql = "INSERT INTO information (username, email, mobile, address, symptom, message)
     VALUES (?, ?, ?, ?, ?, ?);";
 
     // prepare statement
-    $result = mysqli_prepare($con, $sql);
-
-    if ($result) {
+    if ($result = mysqli_prepare($con, $sql)) {
         // bind variables to prepare statment as parameters
-        mysqli_stmt_bind_param($result, 'ssssss', $username, $email, $mobille, $address, $check, $message);
+        mysqli_stmt_bind_param($result, 'ssssss', $username, $email, $mobile, $address, $check, $message);
 
         // variables & values
         $username = $_POST['username'];
@@ -399,20 +397,56 @@ if (isset($_POST['submit'])) {
         foreach ($symp as $check1) {
             $check .= $check1 . ",";    // Storing multiple symptoms in array
         }
-        mysqli_stmt_execute($result);
+        if (mysqli_stmt_execute($result)) {
 ?>
-        <script type="text/javascript">
-            alert("Your Information has been Inserted Successfully!");
-        </script>
-    <?php
-    } else {    //if query not executes
-    ?>
-        <script type="text/javascript">
-            alert("Opps!! Something went wrong. Please try again");
-        </script>
-<?php
-    }
 
+            <script type="text/javascript">
+                alert("Your Information has been Inserted Successfully!");
+            </script>
+            <?php
+            // Redirecting to email function
+            $username = $_POST['username'];
+            $subject = 'COVID-19';
+            $mailbody = 'Dear ' . $username . ' thank you for showing your interest & providing valuable feedback. 
+            To prevent COVID-19 Please  Stay Safe at Home Quarantine....Don\'t panic!
+            We will contact with you shortly...
+            From: Soumyadeep Sinha';                    // mail text
+            $headers = 'From: youemail@email.com';   // sender email address
+
+            // if user doesn't provide a email
+            if ($email == '') {
+            ?>
+                <script type="text/javascript">
+                    alert("You haven't provided any email!");
+                </script>
+            <?php
+                exit();
+            } else
+                // Executing mail function when user provides a email
+                if (mail($email, $subject, $mailbody, $headers)) {
+            ?>
+                <!-- email sent successfully -->
+                <script type="text/javascript">
+                    alert("Please check your email inbox!");
+                </script>
+            <?php
+                } else {
+            ?>
+                <!-- email function doesn't executed -->
+                <script type="text/javascript">
+                    alert("Something went wrong. Please try again later!");
+                </script>
+            <?php
+                }
+        } else {
+            ?>
+            <!-- query not executes -->
+            <script type="text/javascript">
+                alert("Opps!! Something went wrong. Please try again");
+            </script>
+<?php
+        }
+    }
     // close prepared statement
     mysqli_stmt_close($result);
 
@@ -420,6 +454,5 @@ if (isset($_POST['submit'])) {
     mysqli_close($con);
 }
 
-// Redirecting to email page
-include 'email.php';
+
 ?>

@@ -1,33 +1,73 @@
-<?php
-include_once '../dbconnection.php';
+<!DOCTYPE html>
+<html lang="en">
 
-$sql = "SELECT * FROM info;";
-$result = mysqli_query($con, $sql);
-$resultCheck = mysqli_num_rows($result);
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!-- Popper JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <!-- Font Awesome 4.7 CDN Link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha256-NuCn4IvuZXdBaFKJOAcsU2Q3ZpwbdFisd5dux4jkQ5w=" crossorigin="anonymous" />
+  <!-- Remove Favicon -->
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <title>Details</title>
+</head>
 
-if ($resultCheck > 0) {
-  while ($row = mysqli_fetch_assoc($result)) {
-?>
-    <tr>
-      <th class="text-left" colspan="6">User Details From Database</th>
-    </tr>
-    <tr class="text-capitalize text-white">
-      <th style="color: #fff; background: #2196f3;"> User Name </th>
-      <th style="color: #fff; background: #ffc107;"> Email </th>
-      <th style="color: #fff; background: #008c76ff;"> Mobile </th>
-      <th style="color: #fff; background: #c91e7f;"> Address </th>
-      <th style="color: #fff; background: #4caf50;"> Symptoms </th>
-      <th style="color: #fff; background: #332737ff;"> Drescription </th>
-    </tr>
-    <tr class="mb-5">
-      <td> <?php echo $row['username'] . "<br/>"; ?> </td>
-      <td> <?php echo $row['email'] . "<br/>"; ?> </td>
-      <td> <?php echo $row['mobile'] . "<br/>"; ?> </td>
-      <td> <?php echo $row['address'] . "<br/>"; ?> </td>
-      <td> <?php echo $row['symptom'] . "<br/>"; ?> </td>
-      <td> <?php echo $row['message'] . "<br/>"; ?> </td>
-    </tr>
-<?php
-  }
-}
-?>
+<body>
+  <div class="main-div">
+    <h1>List of People who Contacted with us</h1>
+    <div class="center-div">
+      <div class="table-reponsive">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nmae</th>
+              <th>Email id</th>
+              <th>Mobile No</th>
+              <th>Address</th>
+              <th>Symptoms</th>
+              <th>Drescription</th>
+              <th colspan="2">Operation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <?php
+            include_once '../dbconnection.php';
+
+            $sql = "SELECT * FROM info;";
+            $query = mysqli_query($con, $sql);
+            $row = mysqli_num_rows($query);
+
+            while ($result = mysqli_fetch_array($query)) {
+            ?>
+              <tr>
+                <td><?php echo $result['id']; ?></td>
+                <td><?php echo $result['username']; ?></td>
+                <td><span class="email-style"><?php echo $result['email']; ?></span></td>
+                <td><?php echo $result['mobile']; ?></td>
+                <td><?php echo $result['address']; ?></td>
+                <td><?php echo $result['symptom']; ?></td>
+                <td><?php echo $result['message']; ?></td>
+                <td><i class="fa fa-edit" aria-hidden="true"></i></td>
+                <td><i class="fa fa-trash" aria-hidden="true"></i></td>
+              </tr>
+            <?php
+            }
+            ?>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

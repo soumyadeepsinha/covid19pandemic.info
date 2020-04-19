@@ -122,7 +122,6 @@
         ?>
       </table>
     </div>
-    <form action="india.php" target="_blank"><button type="submit" class="btn btn-outline-success update_button"> Day wise Update in India </button></form>
   </section>
   <!-- Top Cursor -->
   <div class="container scrolltop float-right pr-5">
