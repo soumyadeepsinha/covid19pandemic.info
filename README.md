@@ -1,4 +1,5 @@
 # COVID-19_Info
+This website will provide us all the latest information about covid-19 cases, across the world & all states of India.
 In this Project a create & design a Website using PHP, HTML, CSS & JavaScript.
 **Here I added a auto generated mail by php mail function; when provides his/her email id, php will sent a auto generated email.**
 This is a clone website from a Youtuber called Thapa Technical's youtube video, I do almost same on his tutorial gudience.
