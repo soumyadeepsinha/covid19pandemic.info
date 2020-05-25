@@ -29,7 +29,8 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg nav_style p-3">
         <a class="navbar-brand pl-5 font-weight-bolder" href="index.php"> COVID-19 Pandemic </a>
-        <button class="navbar-toggler navbar-dark bg-dark" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler navbar-dark bg-dark" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" 
+        aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
@@ -65,7 +66,8 @@
             </div>
             <div class="col-lg-7 col-md-7 col-12 order-lg-2 order-1">
                 <div class="rightside w-100 h-100 d-flex justify-content-center align-items-center">
-                    <h1> Stay Home <i class="fa fa-home fa-3x" aria-hidden="true"></i> <span class="text-primary"> Stay Safe </span> Fight Together Against C<span class="rotate"><img src="./assets/images/O.png" alt="O"></span>rona Virus </h1>
+                    <h1> Stay Home <i class="fa fa-home fa-1.5x" aria-hidden="true"></i> <span class="text-primary"> Stay Safe </span> Let's Fight Together Against C<span                                      class="rotate"><img src="./assets/images/O.png" alt="O"></span>rona Virus
+                     </h1>
                 </div>
             </div>
         </div>
@@ -78,7 +80,9 @@
                 <?php date_default_timezone_set('Asia/Kolkata');
                 $currentTime = date('d-m-Y');
                 echo $currentTime; ?>
-                <form action="world.php" target="_blank"><button type="submit" class="btn btn-outline-success update_button">World Wide Update</button></form>
+                <div class="update_button">
+                    <form action="world.php" target="_blank"><button type="submit" class="btn btn-outline-success _" blank">World Wide Updates</button></form>
+                </div>
             </h3>
         </div>
         <div class="d-flex justify-content-around align-items-center count_style">
@@ -105,7 +109,7 @@
         </div>
     </section>
     <!-- About -->
-    <section class=" about_corona">
+    <section class="about_corona">
         <div class="container-fluid sub-section pt-5 pb-5" id="aboutid">
             <div class="section_header text-center mb-5 mt-5">
                 <h1> About COVID-19 </h1>
@@ -119,8 +123,10 @@
                         <span class="text-primary"> According to World Health Organization (WHO) </span>
                     </h2>
                     <p> Coronavirus disease (COVID-19) is an infectious disease caused by a newly discovered coronavirus.
-                        Most people infected with the COVID-19 virus will experience mild to moderate respiratory illness and recover without requiring special treatment. Older people, and those with underlying medical problems like cardiovascular disease, diabetes, chronic respiratory disease, and cancer are more likely to develop serious illness. </p>
-                    <p> The COVID-19 virus spreads primarily through droplets of saliva or discharge from the nose when an infected person coughs or sneezes, so it’s important that you also practice respiratory etiquette (for example, by coughing into a flexed elbow). </p>
+                        Most people infected with the COVID-19 virus will experience mild to moderate respiratory illness and recover without requiring special treatment. Older people,                            and those with underlying medical problems like cardiovascular disease, diabetes, chronic respiratory disease, and cancer are more likely to develop
+                        serious illness. </p>
+                    <p> The COVID-19 virus spreads primarily through droplets of saliva or discharge from the nose when an infected person coughs or sneezes, so it’s important that you
+                    also practice respiratory etiquette (for example, by coughing into a flexed elbow). </p>
                 </div>
             </div>
         </div>
@@ -179,10 +185,10 @@
     </section>
     <!-- Prevention -->
     <section class="prevent_corona">
-        <div class="govt_inst do_dont" id="previd">
+        <!-- <div class="govt_inst do_dont" id="previd">
             <h2 class="text-info text-center mt-5"> Instruction from Govt. of India about Corona Virus: </h2>
-            <iframe src="assets/pdf/Poster_Corona_ad_Eng.pdf" frameborder="1" width="80%" height="500px" class="mt-2 mb-10"></iframe>
-        </div>
+            <iframe src="assets/pdf/Poster_Corona_ad_Eng.pdf" frameborder="1" width="80%" height="450px" class="center mt-2 mb-10"></iframe>
+        </div> -->
         <div class="container-fluid">
             <div class="section_header text-center mb-5 mt-4">
                 <h1> 3 easy-Steps to Prevent Nobel Corona Virus </h1>
@@ -210,7 +216,7 @@
                             </div>
                             <div class="col-lg-8 col-md-8 col-12">
                                 <p class="text-align-left"> Avoid close contact with People (1 meter or 3 feets),
-                                    Home Quarantine Yourself for till <span class="text-primary"> 3rd May </p>
+                                    Home Quarantine Yourself for till <span class="text-primary"> 21st May </p>
                             </div>
                         </div>
                     </div>
@@ -227,7 +233,7 @@
                         </div>
                     </div>
                     <p class="prevention_info">
-                        According to WHO : The best way to prevent and slow down transmission is be well informed about the COVID-19 virus, the disease it causes and how it spreads. Protect yourself and others from infection by washing your hands or using an alcohol based rub frequently and not touching your face.
+                        According to WHO : The best way to prevent and slow down transmission is be well informed about the COVID-19 virus, the disease it causes and how it spreads.                               Protect yourself and others from infection by washing your hands or using an alcohol based rub frequently and not touching your face.
                         <div class="sources text-center"> <strong> You’ve survived <span class="text-primary">
                                     <?php
                                     $from = date_create("2020-03-24");
@@ -238,16 +244,15 @@
                                 </span> days so far 😷 only <span class="text-primary">
                                     <?php
                                     $from = date_create(date('Y-m-d'));
-                                    $to = date_create("2020-05-03");
+                                    $to = date_create("2020-05-31");
                                     $diff = date_diff($to, $from);
                                     echo $diff->format('%a');
-                                    ?> </span> days before the lockdown is lifted. Congrats! 🥳</p></strong>
+                                    ?> </span> days before the lockdown is lifted. Congrats!</p></strong>
                 </div>
-            </div>
-            <div class="sources container-fluid tex-center">
-                * All This above information is sourced from crowdsource <br />
-                &ensp; data and can be inaccurate. <br />
-                &ensp; Don't panic & wait for govt. sources to verify this data.
+                <div class="row sources text-center">
+                    * All This above information is sourced from crowdsource <br />
+                    &ensp; data and can be inaccurate. Don't panic & wait for govt. sources to verify this data.
+                </div>
             </div>
         </div>
         </div>
@@ -334,12 +339,10 @@
                 I will never share any of your contact details with any one <br />
                 I'll update this once or twice a day; For exact info you can follow top listed Govt. Websites <br />
                 Thank You <br />
+                <h6 class="text-center"> Designed by Soumyadeep Sinha </h6>
                 <form action="https://bitbucket.org/soumyadeepsinha/covid19info/src/master/" target="_blank"><button type="submit" class="btn btn-outline-success">
                         < Source Code /> </button></form>
             </p>
-        </div>
-        <div class="footer_style text-white text-center container-fluid">
-            <h6 class="text-center"> Designed by Soumyadeep Sinha </h6>
         </div>
     </footer>
     <!-- JavaScript -->
@@ -404,40 +407,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 alert("Your Information has been Inserted Successfully!");
             </script>
             <?php
-            // Redirecting to email function
-            $username = $_POST['username'];
-            $subject = 'COVID-19';
-            $mailbody = 'Dear ' . $username . ' thank you for showing your interest & providing valuable feedback. 
-            To prevent COVID-19 Please  Stay Safe at Home Quarantine....Don\'t panic!
-            We will contact with you shortly...
-            From: Soumyadeep Sinha';                    // mail text
-            $headers = 'From: youemail@email.com';   // sender email address
-
-            // if user doesn't provide a email
-            if ($email == '') {
-            ?>
-                <script type="text/javascript">
-                    alert("You haven't provided any email!");
-                </script>
-            <?php
-                exit();
-            } else
-                // Executing mail function when user provides a email
-                if (mail($email, $subject, $mailbody, $headers)) {
-            ?>
-                <!-- email sent successfully -->
-                <script type="text/javascript">
-                    alert("Please check your email inbox!");
-                </script>
-            <?php
-                } else {
-            ?>
-                <!-- email function doesn't executed -->
-                <script type="text/javascript">
-                    alert("Something went wrong. Please try again later!");
-                </script>
-            <?php
-                }
         } else {
             ?>
             <!-- query not executes -->
