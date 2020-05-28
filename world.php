@@ -63,9 +63,9 @@
           <img src="./assets/images/Corona_Icon.png" alt="Corona Virus" class="icon">
         </div>
       </div>
-      <div class="col-lg-7 col-md-7 col-12 order-lg-2 order-1">
+      <div class="col-lg-6 col-md-7 col-12 order-lg-2 order-1">
         <div class="rightside w-100 h-100 d-flex justify-content-center align-items-center">
-          <h1> Stay Home <i class="fa fa-home"></i> <span class="text-primary"> Stay Safe </span> Fight Together Against C<span class="rotate"><img src="./assets/images/O.png" alt="O"></span>rona Virus </h1>
+          <h1> Stay Home <i class="fa fa-home fa-1.5x" aria-hidden="true"></i> <span class="text-primary"> Stay Safe </span> Let's Fight Together Against C<span class="rotate"><img src="./assets/images/O.png" alt="O"></span>rona Virus </h1>
         </div>
       </div>
     </div>
@@ -111,11 +111,10 @@
         I will never share any of your contact details with any one <br />
         I'll update this once or twice a day; For exact info you can follow top listed Govt. Websites <br />
         Thank You <br />
-        <form action="https://github.com/soumyadeepsinha/COVID-19_Info" target="_blank"><button type="submit" class="btn btn-outline-success"> Source Code </button></form>
+        <h6 class="text-center"> Designed by Soumyadeep Sinha </h6>
+        <a href="https://github.com/soumyadeepsinha/covid19pandemic.info.git" id="sourcebtn" class="btn btn-primary" target="_blank">
+          Source Code &nbsp; <i class="fa fa-external-link" aria-hidden="true"></i> </a>
       </p>
-    </div>
-    <div class=" footer_style text-white text-center container-fluid">
-      <h6 class="text-center"><i class="fa fa-copyright fa-1.5x text-black"></i> 2020 Soumyadeep Sinha </h6>
     </div>
   </footer>
   <!-- JavaScript -->
@@ -170,3 +169,5 @@
     }
   </script>
 </body>
+
+</html>
