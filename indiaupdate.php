@@ -65,8 +65,8 @@
       </div>
       <div class="col-lg-7 col-md-7 col-12 order-lg-2 order-1">
         <div class="rightside w-100 h-100 d-flex justify-content-center align-items-center">
-            <h1> Stay Home <i class="fa fa-home fa-1.5x" aria-hidden="true"></i> <span class="text-primary"> Stay Safe </span> Let's Fight Together Against C<span                                      class="rotate"><img src="./assets/images/O.png" alt="O"></span>rona Virus
-            </h1>
+          <h1> Stay Home <i class="fa fa-home fa-1.5x" aria-hidden="true"></i> <span class="text-primary"> Stay Safe </span> Let's Fight Together Against C<span class="rotate"><img src="./assets/images/O.png" alt="O"></span>rona Virus
+          </h1>
         </div>
       </div>
     </div>
@@ -80,58 +80,62 @@
         $currentTime = date('d-m-Y h:i:s A', time());
         echo $currentTime; ?>
         <div class="update_button">
-            <form action="world.php" target="_blank"><button type="submit" class="btn btn-outline-success _" blank">World Wide Updates</button></form>
+          <form action="world.php" target="_blank"><button type="submit" class="btn btn-outline-success _" blank">World Wide Updates</button></form>
         </div>
       </h3>
     </div>
     <style>
-#grid {
-  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
+      #grid {
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
 
-#grid td, #grid th {
-  border: 1px solid #ddd;
-  padding: 8px;
-}
+      #grid td,
+      #grid th {
+        border: 1px solid #ddd;
+        padding: 8px;
+      }
 
-#grid tr:nth-child(even){background-color: #f2f2f2;}
+      #grid tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
 
-#grid tr:hover {background-color: #ddd;}
+      #grid tr:hover {
+        background-color: #ddd;
+      }
 
-#grid th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  background-color: #4CAF50;
-  color: white;
-}
-</style>
-<?php
-$url="https://www.mohfw.gov.in/";
-$html=file_get_contents($url);
-$dom=new domDocument;
-@$dom->loadHTML($html);
-$tables=$dom->getElementsByTagName('table');
-$rows=$tables->item(0)->getElementsByTagName('tr');
-echo "<table id='grid'>";
-echo "<tr><th>S. No.</th><th>Name of State </th><th>Total Confirmed cases</th><th>Cured / Discharged
-</th><th>Death</th></tr>";
-$total='';
-$discharged='';
-$death='';
-foreach($rows as $row){
-	$cols=$row->getElementsByTagName('td');
-	if(isset($cols->item(0)->nodeValue) && isset($cols->item(1)->nodeValue) && isset($cols->item(2)->nodeValue) && isset($cols->item(3)->nodeValue) && isset($cols->item(4)->nodeValue)){
-		echo "<tr><td>".$cols->item(0)->nodeValue."</td><td>".$cols->item(1)->nodeValue."</td><td>".$cols->item(2)->nodeValue."</td><td>".$cols->item(3)->nodeValue."</td><td>".$cols->item         (4)->nodeValue."</td></tr>";
-		$total=$total+$cols->item(2)->nodeValue;
-		$discharged=$discharged+$cols->item(3)->nodeValue;
-		$death=$death+$cols->item(4)->nodeValue;
-	}
-}
+      #grid th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        background-color: #4CAF50;
+        color: white;
+      }
+    </style>
+    <?php
+    $url = "https://www.mohfw.gov.in/";
+    $html = file_get_contents($url);
+    $dom = new domDocument;
+    @$dom->loadHTML($html);
+    $tables = $dom->getElementsByTagName('table');
+    $rows = $tables->item(0)->getElementsByTagName('tr');
+    echo "<table id='grid'>";
+    echo "<tr><th>S. No.</th><th>Name of State </th><th>Total Confirmed cases</th><th>Cured / Discharged</th><th>Death</th></tr>";
+    $total = '';
+    $discharged = '';
+    $death = '';
+    foreach ($rows as $row) {
+      $cols = $row->getElementsByTagName('td');
+      if (isset($cols->item(0)->nodeValue) && isset($cols->item(1)->nodeValue) && isset($cols->item(2)->nodeValue) && isset($cols->item(3)->nodeValue) && isset($cols->item(4)->nodeValue)) {
+        echo "<tr><td>" . $cols->item(0)->nodeValue . "</td><td>" . $cols->item(1)->nodeValue . "</td><td>" . $cols->item(2)->nodeValue . "</td><td>" . $cols->item(3)->nodeValue . "</td><td>" . $cols->item(4)->nodeValue . "</td></tr>";
+        $total = $total + $cols->item(2)->nodeValue;
+        $discharged = $discharged + $cols->item(3)->nodeValue;
+        $death = $death + $cols->item(4)->nodeValue;
+      }
+    }
 
-echo "</table>";
-?>
+    echo "</table>";
+    ?>
     </div>
   </section>
   <!-- Top Cursor -->
@@ -148,8 +152,9 @@ echo "</table>";
         I will never share any of your contact details with any one <br />
         I'll update this once or twice a day; For exact info you can follow top listed Govt. Websites <br />
         Thank You <br />
-        Designed by -- Soumyadeep Sinha
-        <form action="https://github.com/soumyadeepsinha/COVID-19_Info" target="_blank"><button type="submit" class="btn btn-outline-success"> Source Code </button></form>
+        <h6 class="text-center"> Designed by Soumyadeep Sinha </h6>
+        <a href="https://github.com/soumyadeepsinha/covid19pandemic.info.git" id="sourcebtn" class="btn btn-primary" target="_blank">
+          Source Code &nbsp; <i class="fa fa-external-link" aria-hidden="true"></i> </a>
       </p>
     </div>
   </footer>
@@ -175,3 +180,5 @@ echo "</table>";
     }
   </script>
 </body>
+
+</html>
