@@ -29,8 +29,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg nav_style p-3">
         <a class="navbar-brand pl-5 font-weight-bolder" href="index.php"> COVID-19 Pandemic </a>
-        <button class="navbar-toggler navbar-dark bg-dark" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" 
-        aria-label="Toggle navigation">
+        <button class="navbar-toggler navbar-dark bg-dark" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
@@ -66,8 +65,8 @@
             </div>
             <div class="col-lg-7 col-md-7 col-12 order-lg-2 order-1">
                 <div class="rightside w-100 h-100 d-flex justify-content-center align-items-center">
-                    <h1> Stay Home <i class="fa fa-home fa-1.5x" aria-hidden="true"></i> <span class="text-primary"> Stay Safe </span> Let's Fight Together Against C<span                                      class="rotate"><img src="./assets/images/O.png" alt="O"></span>rona Virus
-                     </h1>
+                    <h1> Stay Home <i class="fa fa-home fa-1.5x" aria-hidden="true"></i> <span class="text-primary"> Stay Safe </span> Let's Fight Together Against C<span class="rotate"><img src="./assets/images/O.png" alt="O"></span>rona Virus
+                    </h1>
                 </div>
             </div>
         </div>
@@ -123,10 +122,10 @@
                         <span class="text-primary"> According to World Health Organization (WHO) </span>
                     </h2>
                     <p> Coronavirus disease (COVID-19) is an infectious disease caused by a newly discovered coronavirus.
-                        Most people infected with the COVID-19 virus will experience mild to moderate respiratory illness and recover without requiring special treatment. Older people,                            and those with underlying medical problems like cardiovascular disease, diabetes, chronic respiratory disease, and cancer are more likely to develop
+                        Most people infected with the COVID-19 virus will experience mild to moderate respiratory illness and recover without requiring special treatment. Older people, and those with underlying medical problems like cardiovascular disease, diabetes, chronic respiratory disease, and cancer are more likely to develop
                         serious illness. </p>
                     <p> The COVID-19 virus spreads primarily through droplets of saliva or discharge from the nose when an infected person coughs or sneezes, so it’s important that you
-                    also practice respiratory etiquette (for example, by coughing into a flexed elbow). </p>
+                        also practice respiratory etiquette (for example, by coughing into a flexed elbow). </p>
                 </div>
             </div>
         </div>
@@ -233,7 +232,7 @@
                         </div>
                     </div>
                     <p class="prevention_info">
-                        According to WHO : The best way to prevent and slow down transmission is be well informed about the COVID-19 virus, the disease it causes and how it spreads.                               Protect yourself and others from infection by washing your hands or using an alcohol based rub frequently and not touching your face.
+                        According to WHO : The best way to prevent and slow down transmission is be well informed about the COVID-19 virus, the disease it causes and how it spreads. Protect yourself and others from infection by washing your hands or using an alcohol based rub frequently and not touching your face.
                         <div class="sources text-center"> <strong> You’ve survived <span class="text-primary">
                                     <?php
                                     $from = date_create("2020-03-24");
@@ -340,8 +339,8 @@
                 I'll update this once or twice a day; For exact info you can follow top listed Govt. Websites <br />
                 Thank You <br />
                 <h6 class="text-center"> Designed by Soumyadeep Sinha </h6>
-                <form action="https://bitbucket.org/soumyadeepsinha/covid19info/src/master/" target="_blank"><button type="submit" class="btn btn-outline-success">
-                        < Source Code /> </button></form>
+                <a href="https://github.com/soumyadeepsinha/covid19pandemic.info.git" id="sourcebtn" class="btn btn-primary" target="_blank">
+                    Source Code &nbsp; <i class="fa fa-external-link" aria-hidden="true"></i> </a>
             </p>
         </div>
     </footer>
@@ -406,9 +405,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <script type="text/javascript">
                 alert("Your Information has been Inserted Successfully!");
             </script>
-            <?php
+        <?php
         } else {
-            ?>
+        ?>
             <!-- query not executes -->
             <script type="text/javascript">
                 alert("Opps!! Something went wrong. Please try again");
