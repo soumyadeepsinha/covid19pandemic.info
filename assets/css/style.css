@@ -17,7 +17,12 @@ html {
 
 .nav_style {
   background: rgb(7, 7, 109) !important;
-  background: linear-gradient(90deg, rgba(7, 7, 109, 1) 0%, rgba(209, 181, 20, 0.9615196420365021) 45%, rgba(255, 0, 14, 1) 100%) !important;
+  background: linear-gradient(
+    90deg,
+    rgba(7, 7, 109, 1) 0%,
+    rgba(209, 181, 20, 0.9615196420365021) 45%,
+    rgba(255, 0, 14, 1) 100%
+  ) !important;
 }
 
 .nav_style a {
@@ -31,6 +36,7 @@ html {
 
 .rightside h1 {
   font-size: 3rem;
+  text-align: left;
 }
 
 .update {
@@ -40,7 +46,7 @@ html {
 /* !Animation for O */
 
 .rotate img {
-  width: 6%;
+  width: 7%;
   margin-bottom: 3px;
   animation: orotate 5s linear infinite;
 }
@@ -62,22 +68,22 @@ html {
 
 @keyframes zinout {
   0% {
-    transform: scale(.75);
+    transform: scale(0.75);
   }
   20% {
     transform: scale(1);
   }
   40% {
-    transform: scale(.75);
+    transform: scale(0.75);
   }
   60% {
     transform: scale(1);
   }
   80% {
-    transform: scale(.75);
+    transform: scale(0.75);
   }
   100% {
-    transform: scale(.75);
+    transform: scale(0.75);
   }
 }
 
@@ -121,7 +127,8 @@ html {
   background-color: #f6fcf8;
   max-width: 480px;
   display: flex;
-  margin-left: 350px;
+  justify-content: center;
+  align-items: center;
   padding: 10px;
   border-radius: 5px;
 }
@@ -198,6 +205,14 @@ html {
     width: 100%;
     font-size: 28px;
   }
+  .about_corona h1 {
+    font-size: 20px;
+  }
+  .about_corona img {
+    width: 100%;
+    padding-right: 50px !important;
+    margin-bottom: 10px;
+  }
   .count_style {
     display: inline !important;
   }
@@ -220,9 +235,13 @@ html {
   .prevent_corona h1 {
     font-size: 24px;
   }
-  .govt_info img {
+  .govt_info {
+    font-size: 16px;
     width: 80%;
-    padding-right: 15px;
+    height: 50px;
+  }
+  .govt_info img {
+    height: 20px;
   }
   iframe {
     width: 80%;
@@ -238,16 +257,20 @@ iframe {
 }
 
 .govt_info {
+  width: 100%;
+  height: 90vh;
   margin-top: 5px;
   padding: 5px;
+  position: relative;
 }
 
 .govt_info img {
-  margin-left: 90px !important;
-  padding: 25px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: absolute;
+  height: auto;
+  width: 80%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 table {
@@ -258,7 +281,8 @@ table {
   margin: auto;
 }
 
-th, td {
+th,
+td {
   border: 1px solid #f2f2f2;
   padding: 8px 30px;
   text-align: center;
@@ -274,7 +298,7 @@ td {
   font-size: 15px;
 }
 
-.email-style {
+.symp-style {
   font-size: 16px;
   color: grey;
   display: inline-block;
@@ -307,4 +331,20 @@ a {
   display: flex;
   justify-content: center;
   text-align: center;
+}
+
+#sourcebtn {
+  width: 20%;
+  margin-bottom: 10px;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  font-size: 22px;
+  padding: 14px 28px;
+  border-radius: 30px;
+  color: #63c76a;
+  background-color: #fff;
+  border-color: #63c76a;
+  border-bottom-width: 2px;
+  text-shadow: none;
 }
