@@ -2,8 +2,12 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Expires" content="0">
+    <meta name="keyword" content="Corona Virus Information, covid19pandemic, Corona Virsu Info, Corona Virus Update India">
+    <meta name="description" content="Covid19information provides everything about Corona Virsu Information, Here You will get Covid-19 India's Statewise & Worldwide updates that we've collected using Official website & api">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <!-- jQuery library -->
@@ -22,7 +26,7 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <!-- Custom Stylesheet -->
     <link rel="stylesheet" href="./assets/css/style.css">
-    <title>Novel Corona Virus</title>
+    <title>Corona Virus Information | Covid-19 Info</title>
 </head>
 
 <body>
@@ -65,7 +69,7 @@
             </div>
             <div class="col-lg-7 col-md-7 col-12 order-lg-2 order-1">
                 <div class="rightside w-100 h-100 d-flex justify-content-center align-items-center">
-                    <h1> Stay Home <i class="fa fa-home fa-1.5x" aria-hidden="true"></i> <span class="text-primary"> Stay Safe </span> Let's Fight Together Against C<span class="rotate"><img src="./assets/images/O.png" alt="O"></span>rona Virus
+                    <h1> Stay Home <i class="fa fa-home fa-2.5x" aria-hidden="true"></i> <span class="text-primary"> Stay Safe </span> Let's Fight Together Against C<span class="rotate"><img src="./assets/images/O.png" alt="O"></span>rona Virus
                     </h1>
                 </div>
             </div>
@@ -87,23 +91,23 @@
         <div class="d-flex justify-content-around align-items-center count_style">
             <div>
                 <?php include './admin/index.php'; ?>
-                <h1 class="count"> 1,524,266 </h1>
-                <p class="text-capitalize"> Passengers screened at airport </p>
+                <h1 class="count text-primary"> <?php echo $confirmed; ?> </h1>
+                <p class="text-capitalize"> Total Confirmed Cases </p>
             </div>
             <div>
-                <h1 class="count"> <?php echo $total; ?> </h1>
-                <p class="text-capitalize">&nbsp; Confirmed cases </p>
+                <h1 class="count text-primary"> <?php echo $active; ?> </h1>
+                <p class="text-capitalize">&nbsp; Active cases </p>
             </div>
             <div>
-                <h1 class="count"> <?php echo $discharged; ?> </h1>
-                <p class="text-capitalize"> Cured / Discharged cases </p>
+                <h1 class="count text-success"> <?php echo $discharged; ?> </h1>
+                <p class="text-capitalizex"> Cured / Discharged cases </p>
             </div>
             <div>
-                <h1 class="count"> <?php echo $death; ?> </h1>
+                <h1 class="count text-danger"> <?php echo $death; ?> </h1>
                 <p class="text-capitalize"> Death Cases </p>
             </div>
             <div class="update_button">
-                <form action="https://www.covid19india.org/" target="_blank"><button type="submit" class="btn btn-outline-success _" blank">Latest Update</button></form>
+                <form action="https://www.mohfw.gov.in/" target="_blank"><button type="submit" class="btn btn-outline-success _" blank">Latest Update</button></form>
             </div>
         </div>
     </section>
@@ -122,7 +126,7 @@
                         <span class="text-primary"> According to World Health Organization (WHO) </span>
                     </h2>
                     <p> Coronavirus disease (COVID-19) is an infectious disease caused by a newly discovered coronavirus.
-                        Most people infected with the COVID-19 virus will experience mild to moderate respiratory illness and recover without requiring special treatment. Older people, and those with underlying medical problems like cardiovascular disease, diabetes, chronic respiratory disease, and cancer are more likely to develop
+                        Most people infected with the COVID-19 virus will experience mild to moderate respiratory illness and recover without requiring special treatment. Older people and those with underlying medical problems like cardiovascular disease, diabetes, chronic respiratory disease, and cancer are more likely to develop
                         serious illness. </p>
                     <p> The COVID-19 virus spreads primarily through droplets of saliva or discharge from the nose when an infected person coughs or sneezes, so it’s important that you
                         also practice respiratory etiquette (for example, by coughing into a flexed elbow). </p>
@@ -184,76 +188,76 @@
     </section>
     <!-- Prevention -->
     <section class="prevent_corona">
-        <!-- <div class="govt_inst do_dont" id="previd">
-            <h2 class="text-info text-center mt-5"> Instruction from Govt. of India about Corona Virus: </h2>
+        <div class="govt_inst do_dont" id="previd">
+            <!-- <h2 class="text-info text-center mt-5"> Instruction from Govt. of India about Corona Virus: </h2>
             <iframe src="assets/pdf/Poster_Corona_ad_Eng.pdf" frameborder="1" width="80%" height="450px" class="center mt-2 mb-10"></iframe>
         </div> -->
-        <div class="container-fluid">
-            <div class="section_header text-center mb-5 mt-4">
-                <h1> 3 easy-Steps to Prevent Nobel Corona Virus </h1>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-4 col-md-4 col-12 mt-5">
-                        <div class="row">
-                            <div class="col-lg-4 col-md-4 col-12">
-                                <figure class="text-center">
-                                    <img src="./assets/images/hwash.png" alt="Wash Hand" class="img-fluid" width="90" height="90">
-                                </figure>
-                            </div>
-                            <div class="col-lg-8 col-md-8 col-12">
-                                <p class="text-align-left"> Wash Your Hands Properly with soap or alcohol-based sanitizer </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-12 mt-5">
-                        <div class="row">
-                            <div class="col-lg-4 col-md-4 col-12">
-                                <figure class="text-center">
-                                    <img src="./assets/images/quarantine.png" alt="Home Quarantine" class="img-fluid" width="90" height="90">
-                                </figure>
-                            </div>
-                            <div class="col-lg-8 col-md-8 col-12">
-                                <p class="text-align-left"> Avoid close contact with People (1 meter or 3 feets),
-                                    Home Quarantine Yourself for till <span class="text-primary"> 21st May </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-12 mt-5">
-                        <div class="row">
-                            <div class="col-lg-4 col-md-4 col-12">
-                                <figure class="text-center">
-                                    <img src="./assets/images/mask.png" alt="Wear Mask" class="img-fluid" width="90" height="90">
-                                </figure>
-                            </div>
-                            <div class="col-lg-8 col-md-8 col-12">
-                                <p class="text-align-left"> Cover your Nose and Mouth with Mask, fix your elbow while coughing and sneezing </p>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="prevention_info">
-                        According to WHO : The best way to prevent and slow down transmission is be well informed about the COVID-19 virus, the disease it causes and how it spreads. Protect yourself and others from infection by washing your hands or using an alcohol based rub frequently and not touching your face.
-                        <div class="sources text-center"> <strong> You’ve survived <span class="text-primary">
-                                    <?php
-                                    $from = date_create("2020-03-24");
-                                    $to =  date_create(date('Y-m-d'));
-                                    $diff = date_diff($to, $from);
-                                    echo $diff->format('%a');
-                                    ?>
-                                </span> days so far 😷 only <span class="text-primary">
-                                    <?php
-                                    $from = date_create(date('Y-m-d'));
-                                    $to = date_create("2020-05-31");
-                                    $diff = date_diff($to, $from);
-                                    echo $diff->format('%a');
-                                    ?> </span> days before the lockdown is lifted. Congrats!</p></strong>
+            <div class="container-fluid">
+                <div class="section_header text-center mb-5 mt-4">
+                    <h1> 3 easy-Steps to Prevent Novel Corona Virus </h1>
                 </div>
-                <div class="row sources text-center">
-                    * All This above information is sourced from crowdsource <br />
-                    &ensp; data and can be inaccurate. Don't panic & wait for govt. sources to verify this data.
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4 col-12 mt-5">
+                            <div class="row">
+                                <div class="col-lg-4 col-md-4 col-12">
+                                    <figure class="text-center">
+                                        <img src="./assets/images/hwash.png" alt="Wash Hand" class="img-fluid" width="90" height="90">
+                                    </figure>
+                                </div>
+                                <div class="col-lg-8 col-md-8 col-12">
+                                    <p class="text-align-left"> Wash Your Hands Properly with soap or alcohol-based sanitizer </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-12 mt-5">
+                            <div class="row">
+                                <div class="col-lg-4 col-md-4 col-12">
+                                    <figure class="text-center">
+                                        <img src="./assets/images/quarantine.png" alt="Home Quarantine" class="img-fluid" width="90" height="90">
+                                    </figure>
+                                </div>
+                                <div class="col-lg-8 col-md-8 col-12">
+                                    <p class="text-align-left"> Avoid close contact with People (1 meter or 3 feets),
+                                        Home Quarantine Yourself </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-12 mt-5">
+                            <div class="row">
+                                <div class="col-lg-4 col-md-4 col-12">
+                                    <figure class="text-center">
+                                        <img src="./assets/images/mask.png" alt="Wear Mask" class="img-fluid" width="90" height="90">
+                                    </figure>
+                                </div>
+                                <div class="col-lg-8 col-md-8 col-12">
+                                    <p class="text-align-left"> Cover your Nose and Mouth with Mask, fix your elbow while coughing and sneezing </p>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="prevention_info">
+                            According to WHO : The best way to prevent and slow down transmission is be well informed about the COVID-19 virus, the disease it causes and how it spreads. Protect yourself and others from infection by washing your hands or using an alcohol based rub frequently and not touching your face.
+                            <div class="sources text-center"> <strong> Congrats! You’ve survived <span class="text-primary">
+                                        <?php
+                                        $from = date_create("2020-03-24");
+                                        $to =  date_create("2020-05-31");
+                                        $diff = date_diff($to, $from);
+                                        echo $diff->format('%a');
+                                        ?>
+                                    </span> days so far 😷 Now maintain Unlock 1.0 as per Govt. for more <span class="text-primary">
+                                        <?php
+                                        $from = date_create(date('Y-m-d'));
+                                        $to = date_create("2020-06-30");
+                                        $diff = date_diff($to, $from);
+                                        echo $diff->format('%a');
+                                        ?> </span> days. </p></strong>
+                    </div>
+                    <div class="row sources text-center">
+                        * All This above information is sourced from crowdsource <br />
+                        &ensp; data and can be inaccurate. Don't panic & wait for govt. sources to verify this data.
+                    </div>
                 </div>
             </div>
-        </div>
         </div>
     </section>
     <!-- Contact with us -->
@@ -346,17 +350,17 @@
     </footer>
     <!-- JavaScript -->
     <script>
-        // JQuery for Counter
+        // jQuery for Counter
         $('.count').counterUp({
             delay: 10,
             time: 2000
         })
-        // JavaScript for Arrow button
+        // javaScript for Arrow button
         mybutton = document.getElementById("myBtn");
         window.onscroll = function() {
             scrollFunction()
         };
-        // Scrolling page with arrow
+        // scrolling page with arrow
         function scrollFunction() {
             if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
                 mybutton.style.display = "block";
@@ -379,7 +383,7 @@
 require_once 'dbconnection.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // statement to insert data in table 
-    $sql = "INSERT INTO information (username, email, mobile, address, symptom, message)
+    $sql = "INSERT INTO info (username, email, mobile, address, symptom, message)
     VALUES (?, ?, ?, ?, ?, ?);";
 
     // prepare statement
@@ -391,13 +395,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $username = $_POST['username'];
         $email = $_POST['email'];
         $mobile = $_POST['mobile'];
-        $address = $_POST['address'];   // Storing user data
+        $address = $_POST['address'];   // storing user data
         $symp = $_POST['coronasym'];
         $message = $_POST['message'];
 
         $check = "";
         foreach ($symp as $check1) {
-            $check .= $check1 . ",";    // Storing multiple symptoms in array
+            $check .= $check1 . ",";    // storing multiple symptoms in array
         }
         if (mysqli_stmt_execute($result)) {
 ?>
@@ -405,9 +409,43 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <script type="text/javascript">
                 alert("Your Information has been Inserted Successfully!");
             </script>
-        <?php
+            <?php
+            // redirecting to email function
+            $username = $_POST['username'];
+            $subject = 'COVID-19';
+            $mailbody = 'Dear ' . $username . ' thank you for showing your interest & providing valuable feedback. 
+            To prevent COVID-19 Please  Stay Safe at Home Quarantine....Don\'t panic!
+            We will contact with you shortly...
+            From: Soumyadeep Sinha';                    // mail text
+            $headers = 'From: youremail@mail.com';   // sender email address
+
+            // if user doesn't provide a email
+            if ($email == '') {
+            ?>
+                <script type="text/javascript">
+                    alert("You haven't provided any email!");
+                </script>
+            <?php
+                exit();
+            } else
+                // executing mail function when user provides a email
+                if (mail($email, $subject, $mailbody, $headers)) {
+            ?>
+                <!-- email sent successfully -->
+                <script type="text/javascript">
+                    alert("Please check your email inbox!");
+                </script>
+            <?php
+                } else {
+            ?>
+                <!-- email function doesn't executed -->
+                <script type="text/javascript">
+                    alert("Something went wrong. Please try again later!");
+                </script>
+            <?php
+                }
         } else {
-        ?>
+            ?>
             <!-- query not executes -->
             <script type="text/javascript">
                 alert("Opps!! Something went wrong. Please try again");
@@ -421,6 +459,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Close connection
     mysqli_close($con);
 }
-
 
 ?>
