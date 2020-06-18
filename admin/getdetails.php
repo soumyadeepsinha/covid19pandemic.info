@@ -23,7 +23,7 @@
 
 <body>
   <div class="main-div">
-    <h1>List of People who Contacted with us</h1>
+    <h2 class="heading">List of People who Contact with us</h2>
     <div class="center-div">
       <div class="table-reponsive">
         <table>
@@ -36,6 +36,7 @@
               <th>Address</th>
               <th>Symptoms</th>
               <th>Drescription</th>
+              <th>Updated_at</th>
               <th colspan="2">Operation</th>
             </tr>
           </thead>
@@ -46,7 +47,7 @@
             $sql = "SELECT * FROM info;";
             $query = mysqli_query($con, $sql);
             $row = mysqli_num_rows($query);
-
+            // creating an array
             while ($result = mysqli_fetch_array($query)) {
             ?>
               <tr>
@@ -57,8 +58,9 @@
                 <td><?php echo $result['address']; ?></td>
                 <td><?php echo $result['symptom']; ?></td>
                 <td><?php echo $result['message']; ?></td>
-                <td><i class="fa fa-edit" aria-hidden="true"></i></td>
-                <td><i class="fa fa-trash" aria-hidden="true"></i></td>
+                <td><?php echo $result['updated_at']; ?></td>
+                <td><button class="btn" data-toggle="tooltip" data-placement="top" title="Send Email" value="onclick"><i class="fa fa-envelope-o" aria-hidden="true"></i></button></td>
+                <td><button class="btn" data-toggle="tooltip" data-placement="top" title="Send Message" value="onclick"><i class="fa fa-commenting-o" aria-hidden="true"></i></button></td>
               </tr>
             <?php
             }
@@ -68,6 +70,11 @@
       </div>
     </div>
   </div>
+  <script>
+    $(function() {
+      $('[data-toggle="tooltip"]').tooltip()
+    });
+  </script>
 </body>
 
 </html>
