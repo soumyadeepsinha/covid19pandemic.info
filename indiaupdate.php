@@ -2,11 +2,13 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Required meta tags -->
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Expires" content="0">
+  <meta name="keyword" content="Corona Virus Information, covid19pandemic, Corona Virsu Info, Corona Virus Update India">
+  <meta name="description" content="Covid19information provides everything about Corona Virsu Information, Here You will get Covid-19 India's Statewise & Worldwide updates that we've collected using Official website & api">
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
   <!-- jQuery library -->
@@ -25,7 +27,7 @@
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
   <!-- Custom Stylesheet -->
   <link rel="stylesheet" href="./assets/css/style.css">
-  <title>Novel Corona Virus</title>
+  <title>Corona Virus Update | India</title>
 </head>
 
 <body onload="fetch()">
@@ -120,17 +122,21 @@
     $tables = $dom->getElementsByTagName('table');
     $rows = $tables->item(0)->getElementsByTagName('tr');
     echo "<table id='grid'>";
-    echo "<tr><th>S. No.</th><th>Name of State </th><th>Total Confirmed cases</th><th>Cured / Discharged</th><th>Death</th></tr>";
+    echo "<tr><th>S. No.</th><th>Name of State </th><th>Active cases</th><th>Cured / Discharged
+</th><th>Death</th><th>Total Confirmed Cases</th></tr>";
+
     $total = '';
     $discharged = '';
     $death = '';
+    $confirmed = '';
     foreach ($rows as $row) {
       $cols = $row->getElementsByTagName('td');
-      if (isset($cols->item(0)->nodeValue) && isset($cols->item(1)->nodeValue) && isset($cols->item(2)->nodeValue) && isset($cols->item(3)->nodeValue) && isset($cols->item(4)->nodeValue)) {
-        echo "<tr><td>" . $cols->item(0)->nodeValue . "</td><td>" . $cols->item(1)->nodeValue . "</td><td>" . $cols->item(2)->nodeValue . "</td><td>" . $cols->item(3)->nodeValue . "</td><td>" . $cols->item(4)->nodeValue . "</td></tr>";
-        $total = $total + $cols->item(2)->nodeValue;
-        $discharged = $discharged + $cols->item(3)->nodeValue;
-        $death = $death + $cols->item(4)->nodeValue;
+      if (isset($cols->item(0)->nodeValue) && isset($cols->item(1)->nodeValue) && isset($cols->item(2)->nodeValue) && isset($cols->item(3)->nodeValue) && isset($cols->item(4)->nodeValue) && isset($cols->item(5)->nodeValue)) {
+        echo "<tr><td>" . $cols->item(0)->nodeValue . "</td><td>" . $cols->item(1)->nodeValue . "</td><td>" . $cols->item(2)->nodeValue . "</td><td>" . $cols->item(3)->nodeValue . "</td><td>" . $cols->item(4)->nodeValue . "</td><td>" . $cols->item(5)->nodeValue . "</td></tr>";
+        $confirmed = $cols->item(5)->nodeValue;
+        $total = $cols->item(2)->nodeValue;
+        $discharged = $cols->item(3)->nodeValue;
+        $death = $cols->item(4)->nodeValue;
       }
     }
 
