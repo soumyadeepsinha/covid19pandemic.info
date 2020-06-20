@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (!isset($_SESSION['user'])) {
+  header('location:index.php');
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,12 +25,15 @@
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
   <!-- Custom Stylesheet -->
   <link rel="stylesheet" href="../assets/css/style.css">
-  <title>Details</title>
+  <title>User Details</title>
 </head>
 
 <body>
-  <div class="main-div">
+  <div class="header">
     <h2 class="heading">List of People who Contact with us</h2>
+    <a class="btn btn-sm btn-danger" href="logout.php">Logout</a>
+  </div>
+  <div class="main-div">
     <div class="center-div">
       <div class="table-reponsive">
         <table>
@@ -44,7 +54,7 @@
             <?php
             include_once '../dbconnection.php';
 
-            $sql = "SELECT * FROM info;";
+            $sql = "SELECT * FROM information;";
             $query = mysqli_query($con, $sql);
             $row = mysqli_num_rows($query);
             // creating an array
