@@ -24,7 +24,7 @@ if (!isset($_SESSION['user'])) {
   <!-- Remove Favicon -->
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
   <!-- Custom Stylesheet -->
-  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="assets/style.css">
   <title>User Details</title>
 </head>
 

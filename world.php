@@ -2,11 +2,15 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Required meta tags -->
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keyword" content="Corona Virus Information, covid19pandemic, Corona Virsu Info, Corona Virus Update India">
+    <meta name="description" content="Covid19information provides everything about Corona Virsu Information, Here You will get Covid-19 India's Statewise & Worldwide updates that we've collected using Official website & api">
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
   <!-- jQuery library -->
@@ -25,14 +29,14 @@
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
   <!-- Custom Stylesheet -->
   <link rel="stylesheet" href="./assets/css/style.css">
-  <title>Novel Corona Virus</title>
+  <title>Corona Virus Update | World</title>
 </head>
 
 <body onload="fetch()">
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg nav_style p-3">
     <a class="navbar-brand pl-5 font-weight-bolder" href="index.php"> COVID-19 Pandemic </a>
-    <button class="navbar-toggler navbar-dark bg-dark" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler navbar-dark bg-dark" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle          navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
@@ -63,11 +67,12 @@
           <img src="./assets/images/Corona_Icon.png" alt="Corona Virus" class="icon">
         </div>
       </div>
-      <div class="col-lg-6 col-md-7 col-12 order-lg-2 order-1">
+      <div class="col-lg-7 col-md-7 col-12 order-lg-2 order-1">
         <div class="rightside w-100 h-100 d-flex justify-content-center align-items-center">
-          <h1> Stay Home <i class="fa fa-home fa-1.5x" aria-hidden="true"></i> <span class="text-primary"> Stay Safe </span> Let's Fight Together Against C<span class="rotate"><img src="./assets/images/O.png" alt="O"></span>rona Virus </h1>
+            <h1> Stay Home <i class="fa fa-home fa-1.5x" aria-hidden="true"></i> <span class="text-primary"> Stay Safe </span> Let's Fight Together Against C<span                                      class="rotate"><img src="./assets/images/O.png" alt="O"></span>rona Virus
+            </h1>
         </div>
-      </div>
+     </div>
     </div>
   </div>
   <!-- Lastest Update -->
@@ -78,7 +83,9 @@
         <?php date_default_timezone_set('Asia/Kolkata');
         $currentTime = date('d-m-Y h:i:s A', time());
         echo $currentTime; ?>
-        <form action="indiaupdate.php" target="_blank"><button type="submit" class="btn btn-outline-success update_button">Latest Update in India</button></form>
+        <div class="update_button">
+            <form action="indiaupdate.php" target="_blank"><button type="submit" class="btn btn-outline-success _" blank">All India Updates</button></form>
+        </div>
       </h3>
     </div>
     <div class="table-responsive">
@@ -102,21 +109,21 @@
     <i class="fa fa-arrow-up" aria-hidden="true" onclick="topFunction()" id="myBtn"></i>
   </div>
   <!-- Footer -->
-  <footer class="mt-5">
-    <div class="disclaimer text-white text-center bg-dark">
-      <h3> Disclaimer </h3>
-      <p class="p1"> This is a website just for testing some skills; The above information are collected from Indian govt Official website <br />
-        I made this website for some tutorial purpose, with help of youtube videos <br />
-        World Wide & State cases data are have been collecting by using json api <br />
-        I will never share any of your contact details with any one <br />
-        I'll update this once or twice a day; For exact info you can follow top listed Govt. Websites <br />
-        Thank You <br />
-        <h6 class="text-center"> Designed by Soumyadeep Sinha </h6>
-        <a href="https://github.com/soumyadeepsinha/covid19pandemic.info.git" id="sourcebtn" class="btn btn-primary" target="_blank">
-          Source Code &nbsp; <i class="fa fa-external-link" aria-hidden="true"></i> </a>
-      </p>
-    </div>
-  </footer>
+    <footer class="mt-5">
+        <div class="disclaimer text-white text-center bg-dark">
+            <h3> Disclaimer </h3>
+            <p class="p1"> This is a website just for testing some skills; The above information are collected from Indian govt Official website <br />
+                I made this website for some tutorial purpose, with help of youtube videos <br />
+                World Wide & State cases data are have been collecting by using json api <br />
+                I will never share any of your contact details with any one <br />
+                I'll update this once or twice a day; For exact info you can follow top listed Govt. Websites <br />
+                Thank You <br />
+                <h6 class="text-center"> Designed by Soumyadeep Sinha </h6>
+                <a href="https://github.com/soumyadeepsinha/covid19pandemic.info.git" id="sourcebtn" class="btn btn-primary" target="_blank">
+                Source Code &nbsp; <i class="fa fa-external-link" aria-hidden="true"></i> </a>
+            </p>
+        </div>
+    </footer>
   <!-- JavaScript -->
   <script>
     // Jquery to fetch data on page reload
@@ -169,5 +176,3 @@
     }
   </script>
 </body>
-
-</html>

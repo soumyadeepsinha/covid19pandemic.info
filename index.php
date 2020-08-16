@@ -3,9 +3,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="keyword" content="Corona Virus Information, covid19pandemic, Corona Virsu Info, Corona Virus Update India">
     <meta name="description" content="Covid19information provides everything about Corona Virsu Information, Here You will get Covid-19 India's Statewise & Worldwide updates that we've collected using Official website & api">
     <!-- Latest compiled and minified CSS -->
@@ -14,8 +16,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <!-- Waypoint CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js" integrity="sha256-jDnOKIOq2KNsQZTcBTEnsp76FnfMEttF6AV2DF2fFNE=" crossorigin="anonymous"></script>
-    <!-- Counter Up CND -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js" integrity="sha256-JtQPj/3xub8oapVMaIijPNoM0DHoAtgh/gwFYuN5rik=" crossorigin="anonymous"></script>
     <!-- Popper JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <!-- Latest compiled JavaScript -->
@@ -90,20 +90,19 @@
         </div>
         <div class="d-flex justify-content-around align-items-center count_style">
             <div>
-                <?php include './admin/index.php'; ?>
-                <h1 class="count text-primary"> <?php echo $confirmed; ?> </h1>
+                <h1 class="text-primary" id="confirmed"></h1>
                 <p class="text-capitalize"> Total Confirmed Cases </p>
             </div>
             <div>
-                <h1 class="count text-primary"> <?php echo $active; ?> </h1>
+                <h1 class="text-primary" id="active"></h1>
                 <p class="text-capitalize">&nbsp; Active cases </p>
             </div>
             <div>
-                <h1 class="count text-success"> <?php echo $discharged; ?> </h1>
+                <h1 class="text-success" id="recovered"></h1>
                 <p class="text-capitalizex"> Cured / Discharged cases </p>
             </div>
             <div>
-                <h1 class="count text-danger"> <?php echo $death; ?> </h1>
+                <h1 class="text-danger" id="deaths"></h1>
                 <p class="text-capitalize"> Death Cases </p>
             </div>
             <div class="update_button">
@@ -237,28 +236,13 @@
                         </div>
                         <p class="prevention_info">
                             According to WHO : The best way to prevent and slow down transmission is be well informed about the COVID-19 virus, the disease it causes and how it spreads. Protect yourself and others from infection by washing your hands or using an alcohol based rub frequently and not touching your face.
-                            <div class="sources text-center"> <strong> Congrats! You’ve survived <span class="text-primary">
-                                        <?php
-                                        $from = date_create("2020-03-24");
-                                        $to =  date_create("2020-05-31");
-                                        $diff = date_diff($to, $from);
-                                        echo $diff->format('%a');
-                                        ?>
-                                    </span> days so far 😷 Now maintain Unlock 1.0 as per Govt. for more <span class="text-primary">
-                                        <?php
-                                        $from = date_create(date('Y-m-d'));
-                                        $to = date_create("2020-06-30");
-                                        $diff = date_diff($to, $from);
-                                        echo $diff->format('%a');
-                                        ?> </span> days. </p></strong>
-                    </div>
-                    <div class="row sources text-center">
-                        * All This above information is sourced from crowdsource <br />
-                        &ensp; data and can be inaccurate. Don't panic & wait for govt. sources to verify this data.
+                            <!-- <div class="sources text-center">
+                                * All This above information is sourced from crowdsource <br />
+                                &ensp; data and can be inaccurate. Don't panic & wait for govt. sources to verify this data.
+                            </div> -->
                     </div>
                 </div>
             </div>
-        </div>
     </section>
     <!-- Contact with us -->
     <section class="contact">
@@ -318,7 +302,6 @@
                                 <label>Define your Problems</label>
                                 <textarea class="form-control" name="message" rows="3"></textarea>
                             </div>
-
                             <div class="form-submit">
                                 <input type="submit" class="btn btn-success btn-block" value="Submit" />
                             </div>
@@ -350,11 +333,52 @@
     </footer>
     <!-- JavaScript -->
     <script>
-        // jQuery for Counter
-        $('.count').counterUp({
-            delay: 10,
-            time: 2000
-        })
+        // covid -19 data
+        var url = `https://api.covid19india.org/data.json`
+
+        fetch(url).then(response => response.json()
+            .then(data => {
+                console.log(data);
+
+                var total_confirmed, total_active, total_recovered, total_deaths
+
+                var state = []
+                var confirmed = []
+                var active = []
+                var recovered = []
+                var deaths = []
+
+                $.each(data.statewise, function(id, object) {
+                    state.push(object.state)
+                    confirmed.push(object.confirmed)
+                    active.push(object.active)
+                    recovered.push(object.recovered)
+                    deaths.push(object.deaths)
+                })
+
+                // remove first element from the array
+                state.shift()
+                confirmed.shift()
+                active.shift()
+                recovered.shift()
+                deaths.shift()
+
+                console.log(state)
+
+
+                total_active = data.statewise[0].active
+                total_confirmed = data.statewise[0].confirmed
+                total_recovered = data.statewise[0].recovered
+                total_deaths = data.statewise[0].deaths
+
+                $("#active").append(total_active)
+                $("#confirmed").append(total_confirmed)
+                $("#recovered").append(total_recovered)
+                $("#deaths").append(total_deaths)
+
+            })
+        )
+
         // javaScript for Arrow button
         mybutton = document.getElementById("myBtn");
         window.onscroll = function() {
@@ -383,7 +407,7 @@
 require_once 'dbconnection.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // statement to insert data in table 
-    $sql = "INSERT INTO info (username, email, mobile, address, symptom, message)
+    $sql = "INSERT INTO information (username, email, mobile, address, symptom, message)
     VALUES (?, ?, ?, ?, ?, ?);";
 
     // prepare statement
@@ -417,7 +441,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             To prevent COVID-19 Please  Stay Safe at Home Quarantine....Don\'t panic!
             We will contact with you shortly...
             From: Soumyadeep Sinha';                    // mail text
-            $headers = 'From: youremail@mail.com';   // sender email address
+            $headers = 'From: sinhajiko@gmail.com';   // sender email address
 
             // if user doesn't provide a email
             if ($email == '') {

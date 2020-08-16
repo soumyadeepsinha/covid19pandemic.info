@@ -9,11 +9,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $myusername = mysqli_real_escape_string($con, $_POST['username']);
   $mypassword = mysqli_real_escape_string($con, $_POST['password']);
   // sql query for retrieving username & password from database
-  $sql = "SELECT * FROM administrator WHERE user = '$myusername' and password = '$mypassword'";
+  $sql = "SELECT * FROM administrator WHERE username = '$myusername' and password = '$mypassword'";
   $result = mysqli_query($con, $sql);
 
   if (mysqli_num_rows($result) == 1) {
-    $_SESSION['user'] = $myusername;
+    $_SESSION['username'] = $myusername;
     // redirect to user details page
     header('location: userdetails.php');
   } else {
@@ -29,10 +29,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/style.css">
   <!-- Remove Favicon -->
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
   <!-- Custom stylesheet -->
   <link rel="stylesheet" href="assets/style.css">
