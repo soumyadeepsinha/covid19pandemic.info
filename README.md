@@ -13,6 +13,8 @@
  
  * [x] Create the index page for current stats, about COVID-19 & its's symptom
  * [x] Use a API to fetch current stats
+ * [x] Provide a Chart for stats of the States from India
+ * [x] Add World wide statistics by using another API
  * [x] Provide all the info about corona virus (according to WHO)
  * [x] What are the covid symptoms
  * [x] How to prevent COVID-19
