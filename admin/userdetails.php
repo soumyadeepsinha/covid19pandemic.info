@@ -68,7 +68,7 @@ if (!isset($_SESSION['user'])) {
                 <td><?php echo $result['address']; ?></td>
                 <td><?php echo $result['symptom']; ?></td>
                 <td><?php echo $result['message']; ?></td>
-                <td><?php echo $result['updated_at']; ?></td>
+                <td><?php echo $result['created_at']; ?></td>
                 <td><button class="btn" data-toggle="tooltip" data-placement="top" title="Send Email" value="onclick"><i class="fa fa-envelope-o" aria-hidden="true"></i></button></td>
                 <td><button class="btn" data-toggle="tooltip" data-placement="top" title="Send Message" value="onclick"><i class="fa fa-commenting-o" aria-hidden="true"></i></button></td>
               </tr>

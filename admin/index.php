@@ -9,11 +9,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $myusername = mysqli_real_escape_string($con, $_POST['username']);
   $mypassword = mysqli_real_escape_string($con, $_POST['password']);
   // sql query for retrieving username & password from database
-  $sql = "SELECT * FROM administrator WHERE username = '$myusername' and password = '$mypassword'";
+  $sql = "SELECT * FROM administrator WHERE user = '$myusername' and password = '$mypassword'";
   $result = mysqli_query($con, $sql);
 
   if (mysqli_num_rows($result) == 1) {
-    $_SESSION['username'] = $myusername;
+    $_SESSION['user'] = $myusername;
     // redirect to user details page
     header('location: userdetails.php');
   } else {
@@ -43,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
   <div class="main">
     <form action="" method="post">
-      <p class="sign" align="center">Sign in</p>
+      <p class="sign" style="text-align: center;">Sign in</p>
       <form class="form1">
         <input class="un " type="text" placeholder="Username" name="username" autocomplete="off" required />
         <input class="pass" type="password" placeholder="Password" name="password" autocomplete="off" required />
