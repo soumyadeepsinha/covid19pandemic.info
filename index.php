@@ -3,11 +3,11 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="keyword" content="Corona Virus Information, covid19pandemic, Corona Virsu Info, Corona Virus Update India">
     <meta name="description" content="Covid19information provides everything about Corona Virsu Information, Here You will get Covid-19 India's Statewise & Worldwide updates that we've collected using Official website & api">
     <!-- Latest compiled and minified CSS -->
@@ -134,10 +134,10 @@
         </div>
     </section>
     <!-- Symptoms -->
-    <section class="symtoms_corona">
+    <section class="symptoms_corona">
         <div class="container-fluid pt-5 pb-5" id="sympid">
             <div class="section_header text-center mb-5 mt-4">
-                <h1> COVID-19 Symtoms </h1>
+                <h1> COVID-19 Symptom </h1>
             </div>
             <div class="container">
                 <div class="row">
