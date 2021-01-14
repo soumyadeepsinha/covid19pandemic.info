@@ -1,7 +1,7 @@
 # covid19pandemic.info
 > This project will show us the latest numbers of total, active, recovered & deaths caess in India & other countries from all over the world due to Covid-19
 
-[Live View](http://http://covid19.infinityfreeapp.com/)
+[Live View](http://covid19.infinityfreeapp.com/)
 
 ### We have the main (index) page for showing current stats in India & then a short drescription about Corona Virus
   * We have world wide update page for other  covid-19 affected coutries
