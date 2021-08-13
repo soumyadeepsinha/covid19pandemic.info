@@ -325,9 +325,9 @@
                 I will never share any of your contact details with any one <br />
                 I'll update this once or twice a day; For exact info you can follow top listed Govt. Websites <br />
                 Thank You <br />
-                <h6 class="text-center"> Designed by Soumyadeep Sinha </h6>
-                <a href="https://github.com/soumyadeepsinha/covid19pandemic.info.git" id="sourcebtn" class="btn btn-primary" target="_blank">
-                    Source Code &nbsp; <i class="fa fa-external-link" aria-hidden="true"></i> </a>
+            <h6 class="text-center"> Designed by Soumyadeep Sinha </h6>
+            <a href="https://github.com/soumyadeepsinha/covid19pandemic.info.git" id="sourcebtn" class="btn btn-primary" target="_blank">
+                Source Code &nbsp; <i class="fa fa-external-link" aria-hidden="true"></i> </a>
             </p>
         </div>
     </footer>
@@ -441,7 +441,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             To prevent COVID-19 Please  Stay Safe at Home Quarantine....Don\'t panic!
             We will contact with you shortly...
             From: Soumyadeep Sinha';                    // mail text
-            $headers = 'From: sinhajiko@gmail.com';   // sender email address
+            $headers = 'From: phpprogrammar1@gmail.com';   // sender email address
 
             // if user doesn't provide a email
             if ($email == '') {
